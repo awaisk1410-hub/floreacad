@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLOREA CAD | Luxury Jewelry Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap');
+        
+        :root {
+            --ivory: #F5F1E9;
+            --gold: #A88750;
+            --soft-gold: #C7AD80;
+            --charcoal: #373532;
+            --white: #FFFFFF;
+            --border: #D8D8D6;
+        }
+
+        body {
+            background-color: var(--ivory);
+            color: var(--charcoal);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            letter-spacing: 6px;
+            color: var(--gold);
+            margin: 0;
+        }
+
+        .logo-sub {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        nav {
+            margin-top: 30px;
+        }
+
+        nav a {
+            color: var(--charcoal);
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Hero Section Layout */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 54px;
+            color: #2C3E50;
+            margin: 0 0 10px 0;
+            font-weight: 400;
+        }
+
+        .hero-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--gold);
+            margin: 0 0 30px 0;
+            font-weight: 400;
+        }
+
+        .hero-content p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 400px;
+        }
+
+        .btn {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--gold);
+            color: var(--white);
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        /* About & Skills Sections */
+        .about, .skills {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: var(--white);
+        }
+
+        .skills {
+            background-color: var(--ivory);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            color: var(--charcoal);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 1px;
+            background-color: var(--gold);
+            margin: 20px auto 0;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+            color: #555;
+            font-size: 15px;
+        }
+
+        /* Grids */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            text-align: center;
+            padding-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover, .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(168, 135, 80, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin: 0 0 15px 0;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+            padding: 0 30px;
+            margin-bottom: 25px;
+        }
+
+        .skill-card {
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            text-align: center;
+            padding: 40px 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin: 0 0 15px 0;
+            color: var(--gold);
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .badge {
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            border: 1px solid var(--soft-gold);
+            padding: 6px 15px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: var(--ivory);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        footer h2 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--gold);
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            margin-top: 40px;
+        }
+
+        .contact-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">FLORÉA</div>
+    <div class="logo-sub">JEWELRY</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Collections</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>FLOREA CAD</h1>
+        <h3>Jewelry CAD Designer & ZBrush Artist</h3>
+        <p>"Precision in Every Detail. Creativity in Every Design."</p>
+        <a href="#portfolio" class="btn">VIEW PORTFOLIO</a>
+    </div>
+    <div class="hero-image">
+        <img src="ring.jpg" alt="Florea CAD Hero Image">
+    </div>
+</div>
+
+<div class="about" id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>Florea CAD is a jewelry design studio focused on professional 3D jewelry modeling, digital sculpting, and high-quality visualization.</p>
+    <p>As a Jewelry CAD Designer and ZBrush Artist, I combine technical precision with artistic creativity to transform concepts and ideas into detailed 3D jewelry models.</p>
+    <p>My focus is on creating accurate, refined, and production-oriented designs while maintaining attention to detail, proportions, and craftsmanship.</p>
+</div>
+
+<div class="skills" id="skills">
+    <div class="container">
+        <h2 class="section-title">Software & Skills</h2>
+        <div class="grid">
+            <div class="skill-card">
+                <h3>Rhino 7</h3>
+                <p>Professional 3D surface modeling, precise geometric construction, and foundational CAD architecture.</p>
+                <span class="badge">Core Modeling</span>
+            </div>
+            <div class="skill-card">
+                <h3>MatrixGold</h3>
+                <p>Specialized jewelry CAD tools, automated gemstone layouts, prong settings, and dynamic sizing.</p>
+                <span class="badge">Jewelry Suite</span>
+            </div>
+            <div class="skill-card">
+                <h3>ZBrush</h3>
+                <p>Organic digital sculpting, intricate bas-reliefs, ornamental flourishes, and complex animal/mythological motifs.</p>
+                <span class="badge">Digital Sculpture</span>
+            </div>
+            <div class="skill-card">
+                <h3>I Jewel</h3>
+                <p>Photorealistic jewelry rendering, custom studio lighting, metal shader mapping, and high-end visual presentation.</p>
+                <span class="badge">Visualization</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="portfolio">
+    <h2 class="section-title">Design Portfolio</h2>
+    <div class="grid">
+        
+        <div class="card">
+            <img src="ring.jpg" alt="Diamond Engagement Ring">
+            <h3>Ring Collection</h3>
+            <p>Diamond engagement rings and custom wedding bands engineered with exact stone tolerances.</p>
+            <span class="badge">Production Ready</span>
+        </div>
+
+        <div class="card">
+            <img src="signet.jpg" alt="Men's Gold Signet">
+            <h3>Luxury Signets</h3>
+            <p>Clean geometric tolerances and wall thickness optimized for precision casting.</p>
+            <span class="badge">Core Modeling</span>
+        </div>
+
+        <div class="card">
+            <img src="pendant.jpg" alt="Floral Pendant">
+            <h3>Pendant & Locket Collection</h3>
+            <p>Intricate floral motifs and heirloom pendants balanced for weight and aesthetic grace.</p>
+            <span class="badge">Custom Design</span>
+        </div>
+
+        <div class="card">
+            <img src="earrings.jpg" alt="Diamond Earrings">
+            <h3>Earrings & Bracelets</h3>
+            <p>Pave diamond hoops and matching luxury suites designed for secure stone setting.</p>
+            <span class="badge">Fine Jewelry</span>
+        </div>
+
+        <div class="card">
+            <img src="dragon.jpg" alt="ZBrush Dragon">
+            <h3>ZBrush Relief Sculptures</h3>
+            <p>High-detail dragon motifs and organic textures optimized for coin dies and statement pieces.</p>
+            <span class="badge">Organic Art</span>
+        </div>
+
+        <div class="card">
+            <img src="cad.jpg" alt="CAD Wireframe">
+            <h3>Technical Wireframe CAD</h3>
+            <p>Orthographic four-view layouts and blueprints ensuring seamless 3D printing success.</p>
+            <span class="badge">Engineering</span>
+        </div>
+
+    </div>
+</div>
+
+<footer id="contact">
+    <h2>Let's Create Something Unique.</h2>
+    <p>Have a jewelry design idea? Let's bring it to life with precision and creativity.</p>
+    
+    <div class="contact-links">
+        <a href="https://www.instagram.com/florea_cad/" target="_blank">Instagram: @florea_cad</a>
+        <a href="https://wa.me/923204089495" target="_blank">WhatsApp: +92 3204089495</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=awaisk1410@gmail.com" target="_blank">Email: awaisk1410@gmail.com</a>
+    </div>
+</footer>
+
+</body>
+</html>
